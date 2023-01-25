@@ -19,7 +19,7 @@ pipeline {
                }
            }
        }
-       stage('run parallel test"){
+       stage('run parallel test'){
        parallel{
         stage('task1'){
           steps{
