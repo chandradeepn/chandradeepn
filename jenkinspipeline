@@ -1,0 +1,43 @@
+pipeline{
+    agent any
+    stages {
+        stage('Git-Checkout'){
+            steps {
+                    echo "checking the code from repo"
+                   git 'https://github.com/chandradeepn/chandradeepn.git'
+            }
+        }
+         stage('File1') {
+           steps {
+               script {
+                   def data = readFile(file: 'file1.txt')
+                   println(data)
+               }
+           }
+       }
+       stage('File2') {
+           steps {
+               script {
+                   def data = readFile(file: 'file2.txt')
+                   println(data)
+               }
+           }
+       }
+       stage('file3') {
+           steps {
+               script {
+                   def data = readFile(file: 'file3.txt')
+                   println(data)
+               }
+           }
+       }
+       stage('File4') {
+           steps {
+               script {
+                   def data = readFile(file: 'file4.txt')
+                   println(data)
+               }
+           }
+       }
+    }
+}
